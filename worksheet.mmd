@@ -1,0 +1,52 @@
+flowchart TD
+    %% Primary Complaints
+    subgraph primaryComplaints[Motility]
+    diarrhea[Chronic Diarrhea]:::primaryComplaint
+    constipation[Chronic Constipation]:::primaryComplaint
+    end
+    abdominal_pain[Abdominal Pain]:::primaryComplaint --> cbc
+    fever[Fever]:::primaryComplaint --> cbc
+    abdominal_distension[Abdominal Distensions]:::primaryComplaint --> cbc
+    weight_loss[Weight Loss]:::primaryComplaint --> cbc
+    blood[Blood in Stool]:::primaryComplaint --> cbc
+
+    primaryComplaints --> cbc & upperEndo & serology
+    %% Testing
+    %% Blood Testing
+    cbc[/Complete Blood Count/]:::test --> anemia
+    serology[/Serological Blood Testing/]:::test 
+    serology --> iga
+    %% Endoscopy
+    upperEndo[/Upper Endoscopy/]:::test --> upperEndoCoeliac
+
+    subgraph upperEndoCoeliac[Biopsy Coeliac Indicators]
+    scallop(Scalloped Small Bowel Folds):::indicator
+    paucity(Paucity in Small Bowel Folds):::indicator
+    crackedMud("Cracked Mud" Mucosa):::indicator
+    bloodVessels(Prominence of Submucosa Blood Vessels):::indicator
+    nodularPattern(Nodular Pattern Mucosa):::indicator
+    end
+    upperEndoCoeliac --> coeliac
+
+
+    %% Indicators
+    anemia(Anemia):::indicator --> chrons
+    iga(Elevated IgA Antibodies):::indicator --> coeliac
+
+    %% Diseases
+    chrons((Chron's Disease)) --> chronsManagement
+    coeliac((Coeliac Disease)) --> glutenFree
+
+    %% Treatments
+    glutenFree[Gluten Free Diet]:::treatment
+    subgraph chronsManagement[Chrons Management]
+        quitsmoking[Quit Smoking]:::treatment
+        hydration[Hydrate]:::treatment
+        chronsDiet[Specialized Diet]:::treatment
+    end
+
+    %% CSS class definitions
+    classDef primaryComplaint fill:#f58e9d;
+    classDef test fill:#96b9fa;
+    classDef indicator fill:#f0ec89;
+    classDef treatment fill:#bcfc83;
