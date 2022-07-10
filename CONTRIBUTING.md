@@ -3,6 +3,18 @@
 Welcome! We're glad you want to contribute.
 
 
+# Developing
+
+* Edit the mermaid diagram kept inside [`worksheet.mmd`](./worksheet.mmd).
+* You can learn more about Mermaid syntax via their [documentation](https://mermaid-js.github.io/mermaid/#/).
+
+# Building
+
+* Use NPM
+* `npm install`
+* `npm run build` to generate a PNG of the worksheet.
+
+
 # Styleguides
 
 * All contributions must include citations.
