@@ -1,0 +1,24 @@
+{
+  "name": "ibs-worksheet",
+  "version": "1.0.0",
+  "description": "A MermaidJS diagram to help IBS patients chart their progress to a diagnosis.",
+  "main": "index.js",
+  "scripts": {
+    "help": "mmdc -h",
+    "build": "mmdc -i worksheet.mmd -b transparent -o worksheet.png -w 1920 -H 1080",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Freyert/ibs-worksheet.git"
+  },
+  "author": "",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/Freyert/ibs-worksheet/issues"
+  },
+  "homepage": "https://github.com/Freyert/ibs-worksheet#readme",
+  "dependencies": {
+    "@mermaid-js/mermaid-cli": "^9.1.3"
+  }
+}
